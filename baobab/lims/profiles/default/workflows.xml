@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+
+<property name="title" purge="False">
+  Contains workflow definitions for your portal</property>
+
+<object name="bika_kit_assembly_workflow" meta_type="Workflow"/>
+<object name="bika_biospecimen_workflow" meta_type="Workflow"/>
+<object name="bika_shipments_workflow" meta_type="Workflow"/>
+<object name="bika_stockitem_workflow" meta_type="Workflow"/>
+<object name="bika_inventory_order_workflow" meta_type="Workflow"/>
+<object name="bika_storage_workflow" meta_type="Workflow"/>
+<object name="bika_storageposition_workflow" meta_type="Workflow"/>
+<object name="bika_sample_workflow" meta_type="Workflow"/>
+<object name="bika_viral_genomic_analysis" meta_type="Workflow"/>
+
+<bindings>
+    <type type_id="KitTemplates"/>
+    <type type_id="KitTemplate">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="SampleDonors" />
+    <type type_id="SampleDonor">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="DiseaseOntologies" />
+    <type type_id="DiseaseOntology">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Shipments"/>
+    <type type_id="Shipment">
+        <bound-workflow workflow_id="bika_shipments_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Kits" />
+    <type type_id="Kit">
+        <bound-workflow workflow_id="bika_kit_assembly_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Projects"/>
+    <type type_id="Project">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="BiospecTypes"/>
+    <type type_id="BiospecType">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Biospecimens"/>
+    <type type_id="Biospecimen">
+        <bound-workflow workflow_id="bika_biospecimen_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="StorageTypes"/>
+    <type type_id="StorageType">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Products"/>
+    <type type_id="Product">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="StockItems" />
+    <type type_id="StockItem">
+        <bound-workflow workflow_id="bika_stockitem_workflow"/>
+    </type>
+
+    <type type_id="InventoryOrderFolder"/>
+    <type type_id="InventoryOrder">
+        <bound-workflow workflow_id="bika_inventory_order_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="StorageUnits"/>
+    <type type_id="StorageUnit">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="ManagedStorage">
+        <bound-workflow workflow_id="bika_storage_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="UnmanagedStorage">
+        <bound-workflow workflow_id="bika_storage_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="StoragePosition">
+        <bound-workflow workflow_id="bika_storageposition_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <!-- Samples -->
+    <type type_id="Sample">
+      <bound-workflow workflow_id="bika_sample_workflow"/>
+      <bound-workflow workflow_id="bika_cancellation_workflow"/>
+    </type>
+
+    <type type_id="SampleBatches"/>
+    <type type_id="SampleBatch">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="SampleShipments"/>
+    <type type_id="SampleShipment">
+        <bound-workflow workflow_id="bika_sample_shipment_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="AuditLogs"/>
+    <type type_id="AuditLog">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="VirusSamples"/>
+    <type type_id="VirusSample">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Organisms"/>
+    <type type_id="Organism">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="AnatomicalMaterials"/>
+    <type type_id="AnatomicalMaterial">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="CollectionDevices"/>
+    <type type_id="CollectionDevice">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="LabHosts"/>
+    <type type_id="LabHost">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Hosts"/>
+    <type type_id="Host">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="HostDiseases"/>
+    <type type_id="HostDisease">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="Freezers"/>
+    <type type_id="Freezer">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="ViralGenomicAnalyses">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="MonitoringDevices"/>
+    <type type_id="MonitoringDevice">
+        <bound-workflow workflow_id="bika_monitoring_device_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="ViralGenomicAnalysis">
+        <bound-workflow workflow_id="bika_viral_genomic_analysis"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="DeviceReading">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="DeviceHistory">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+    <type type_id="VirusAliquots"/>
+    <type type_id="VirusAliquot">
+        <bound-workflow workflow_id="bika_one_state_workflow"/>
+        <bound-workflow workflow_id="bika_inactive_workflow"/>
+    </type>
+
+</bindings>
+</object>

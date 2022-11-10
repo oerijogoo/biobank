@@ -1,0 +1,133 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="bika">
+
+  <genericsetup:upgradeStep
+        title="Client contact security access to projects"
+        description="Change Project content type catalog to portal catalog"
+        source="1300"
+        destination="1310"
+        handler="baobab.lims.upgrade.to1310.upgrade"
+        sortkey="1"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Batch samples, donors and disease ontology"
+        description="New modules added"
+        source="1310"
+        destination="1400"
+        handler="baobab.lims.upgrade.to1400.upgrade"
+        sortkey="2"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Sample shipment added"
+        description="New module added"
+        source="1400"
+        destination="1500"
+        handler="baobab.lims.upgrade.to1500.upgrade"
+        sortkey="2"
+        profile="baobab.lims:default"/>
+
+    <genericsetup:upgradeStep
+        title="Sample shipment edit javascript"
+        description="Reload javascript for sample shipment edit"
+        source="1500"
+        destination="1510"
+        handler="baobab.lims.upgrade.to1510.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+    <genericsetup:upgradeStep
+        title="Sample shipment edit javascript"
+        description="Reload javascript for sample shipment edit"
+        source="1510"
+        destination="1520"
+        handler="baobab.lims.upgrade.to1520.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+    <genericsetup:upgradeStep
+        title="Sample shipment edit javascript"
+        description="Reload javascript for sample shipment edit"
+        source="1520"
+        destination="1530"
+        handler="baobab.lims.upgrade.to1530.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+    <genericsetup:upgradeStep
+        title="Actions XML"
+        description="Reload javascript for sample shipment edit"
+        source="1530"
+        destination="1531"
+        handler="baobab.lims.upgrade.to1531.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Audit logs display"
+        description="Upgrade to see the audit logs folder second time"
+        source="1531"
+        destination="1600"
+        handler="baobab.lims.upgrade.to1600.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Control Panel"
+        description="Reload Kits Templates image on the control panel"
+        source="1600"
+        destination="1601"
+        handler="baobab.lims.upgrade.to1601.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Add Virus Sample"
+        description="Add content type VirusSample"
+        source="1601"
+        destination="1700"
+        handler="baobab.lims.upgrade.to1700.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Add Monitoring Device"
+        description="Add Freezer Monitoring Device"
+        source="1700"
+        destination="1.7.1"
+        handler="baobab.lims.upgrade.to1701.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Virus Samples folder"
+        description="Remove VirusSample from allowed types"
+        source="1.7.1"
+        destination="1.7.2"
+        handler="baobab.lims.upgrade.to1702.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Add getDatetimeRecorded index"
+        description="Fixes query for getLatestTemperature on freezer"
+        source="1.7.2"
+        destination="1.7.2.1"
+        handler="baobab.lims.upgrade.to17021.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+  <genericsetup:upgradeStep
+        title="Revert Geolocation changes"
+        description="Revert Geolocation changes and update the js"
+        source="1.7.2.1"
+        destination="1.7.2.2"
+        handler="baobab.lims.upgrade.to17022.upgrade"
+        sortkey="8"
+        profile="baobab.lims:default"/>
+
+
+</configure>

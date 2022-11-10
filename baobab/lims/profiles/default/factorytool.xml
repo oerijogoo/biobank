@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<object name="portal_factory" meta_type="Plone Factory Tool">
+    <factorytypes>
+
+        <type portal_type="KitTemplate"/>
+        <type portal_type="Kit"/>
+        <type portal_type="Shipment"/>
+        <type portal_type="Project"/>
+        <type portal_type="BiospecType"/>
+        <type portal_type="Biospecimen"/>
+        <type portal_type="StorageType"/>
+        <type portal_type="InventoryOrder"/>
+        <type portal_type="Product"/>
+        <type portal_type="StockItem"/>
+        <type portal_type="StorageUnit"/>
+        <type portal_type="ManagedStorage"/>
+        <type portal_type="UnmanagedStorage"/>
+        <type portal_type="StoragePosition"/>
+        <type portal_type="SampleBatch"/>
+        <type portal_type="SampleDonor"/>
+        <type portal_type="DiseaseOntology"/>
+        <type portal_type="SampleShipment"/>
+        <type portal_type="AuditLog"/>
+        <type portal_type="VirusSample"/>
+        <type portal_type="Organism"/>
+        <type portal_type="AnatomicalMaterial"/>
+        <type portal_type="CollectionDevice"/>
+        <type portal_type="LabHost"/>
+        <type portal_type="Host"/>
+        <type portal_type="HostDisease"/>
+        <type portal_type="Freezer"/>
+        <type portal_type="MonitoringDevice"/>
+        <type portal_type="ViralGenomicAnalysis"/>
+        <type portal_type="VirusAliquot"/>
+
+    </factorytypes>
+</object>

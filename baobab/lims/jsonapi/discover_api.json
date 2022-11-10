@@ -1,0 +1,565 @@
+{
+    "portal_types": {
+        "Client": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid": [
+                "client_uid"
+            ],
+            "description": "Use parent_path with action create and only use client_uid with action update while get is Client and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example Client"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example clients"
+                },
+                {
+                    "name": "Name",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The name of the client"
+                },
+                {
+                    "name": "Name",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The name of the client"
+                },
+                {
+                    "name": "ClientID",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The id that uniquely identifies the client"
+                },
+                {
+                    "name": "BulkDiscount",
+                    "required": "false",
+                    "type": "boolean",
+                    "description": "One or zero to indicate if bulk discount applies"
+                },
+                {
+                    "name": "MemberDiscountApplies",
+                    "required": "false",
+                    "type": "boolean",
+                    "description": "One or zero to indicate if member discount applies"
+                },
+                {
+                    "name": "CCEmails",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Default Emails to CC all published ARs for this client"
+                },
+                {
+                    "name": "EmailSubject",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Items to be included in email subject lines"
+                },
+                {
+                    "name": "EmailAddress",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Email address of the company"
+                }
+            ]
+        },
+        "Project": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid":[
+                "client_uid"
+            ],
+            "description": "Use the field parent_path with action create and client_uid only with action update while get is Project and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example Project"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example clients/client-1"
+                },
+                {
+                    "name": "StudyType",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The name of the client"
+                },
+                {
+                    "name": "title",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The name of the project"
+                },
+                {
+                    "name": "description",
+                    "required": "true",
+                    "type": "string",
+                    "description": "What the project is all about"
+                },
+                {
+                    "name": "NumParticipants",
+                    "required": "false",
+                    "type": "integer",
+                    "description": "How many will participate in this study"
+                },
+                {
+                    "name": "AgeLow",
+                    "required": "false",
+                    "type": "integer",
+                    "description": "The youngest allowed age for a participant"
+                },
+                {
+                    "name": "AgeHigh",
+                    "required": "false",
+                    "type": "integer",
+                    "description": "The oldest allowed age for a participant"
+                },
+                {
+                    "name": "DateCreated",
+                    "required": "false",
+                    "type": "string in date format for example 2017-08-17",
+                    "description": "Email address of the company"
+                },
+                {
+                    "name": "Service",
+                    "required": "false",
+                    "type": "Multi Reference Field",
+                    "description": "Email address of the company"
+                }
+            ]
+        },
+        "SampleType": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid": [
+                "sampletype_uid"
+            ],
+            "description": "Use parent_path with action create and only use sampletype_uid with action update while get is SampleType and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example SampleType"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example bika_sampletypes"
+                },
+                {
+                    "name": "RetentionDays",
+                    "required": "true",
+                    "type": "string",
+                    "description": "How long a sample of this type can be retained"
+                },
+                {
+                    "name": "title",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The name of this sample type"
+                },
+                {
+                    "name": "description",
+                    "required": "false",
+                    "type": "string",
+                    "description": "A brief description of this sample type"
+                },
+                {
+                    "name": "Prefix",
+                    "required": "true",
+                    "type": "string",
+                    "description": "A short code that will identify this sample type"
+                },
+                {
+                    "name": "MinimumVolume",
+                    "required": "false",
+                    "type": "float",
+                    "description": "The absolute minimum amount that can be selected for a sample of this type"
+                },
+                {
+                    "name": "Hazardous",
+                    "required": "false",
+                    "type": "boolean",
+                    "description": "One or zero indicating if this sample is dangerous or not"
+                }
+            ]
+        },
+        "DiseaseOntology": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid": [
+                "diseaseontology_uid"
+            ],
+            "description": "Use parent_path with action create and only use diseaseontology_uid with action update while get is DiseaseOntology and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example DiseaseOntology"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example bika_sampletypes"
+                },
+                {
+                    "name": "Version",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Version of selected ontology for disease"
+                },
+                {
+                    "name": "Code",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Disease code for selected disease ontology"
+                },
+                {
+                    "name": "FreeText",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Explanation about disease or symptom in case of unknown disease or insufficient information"
+                }
+            ]
+        },
+        "Patient": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid": [
+                "diseaseontology_uid"
+            ],
+            "description": "Use parent_path with action create and only use diseaseontology_uid with action update while get is DiseaseOntology and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example DiseaseOntology"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example bika_sampletypes"
+                },
+                {
+                    "name": "SelectedProject",
+                    "required": "false",
+                    "type": "ReferenceField",
+                    "description": "The uid of the project that this patient will belong to"
+                },
+                {
+                    "name": "InfoLink",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The link to information for this patient"
+                },
+                {
+                    "name": "Sex",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Male or Female or Unknown or Undifferentiated indicating sex of patient"
+                },
+                {
+                    "name": "Age",
+                    "required": "false",
+                    "type": "float",
+                    "description": "The age of the patient"
+                },
+                {
+                    "name": "AgeUnit",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Years or Months or Weeks or Days or Hours or Minutes indicating unit which measures age of the patient"
+                }
+            ]
+        },
+        "Sample": {
+            "url": ".../@@api/v3/[action]/[uid]",
+            "action": [
+                "create",
+                "update",
+                "get"
+            ],
+            "uid": [
+                "sample_uid"
+            ],
+            "description": "Use parent_path with action create and only use sample_uid with action update while get is Sample and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "type of portal for example Sample"
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "the path to the parent for example clients/client-1/project-1 where client-1 and project-1 are ids"
+                },
+                {
+                    "name": "LinkedSample",
+                    "required": "true",
+                    "type": "ReferenceField",
+                    "description": "The uid of the parent Sample that this sample belongs to"
+                },
+                {
+                    "name": "Project",
+                    "required": "true",
+                    "type": "ReferenceField",
+                    "description": "The uid of the project that this sample will belong to"
+                },
+                {
+                    "name": "SampleType",
+                    "required": "true",
+                    "type": "ReferenceField",
+                    "description": "The uid or the title of the sample type that this sample will belong to such as  Whole Blood or 4dd3a41560934613924b98dcbb5b7e5f"
+                },
+                {
+                    "name": "Barcode",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The barcode that uniquely identifies this sample"
+                },
+                {
+                    "name": "StoragePosition",
+                    "required": "true",
+                    "type": "ReferenceField",
+                    "description": "The uid of the storage position that the sample will be stored in"
+                },
+                {
+                    "name": "Volume",
+                    "required": "true",
+                    "type": "float",
+                    "description": "The collected amount of the sample"
+                },
+                {
+                    "name": "Unit",
+                    "required": "true",
+                    "type": "string",
+                    "description": "The unit in which volume is measured for example ml"
+                },
+                {
+                    "name": "APISource",
+                    "required": "false",
+                    "type": "string",
+                    "description": "Used by some sources to identify themselves for special processing for example Azzizi will specify odk"
+                },
+                {
+                    "name": "AnatomicalSiteTerm",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The ICD-O-3 topography code for describing the anatomical source of the sampled material"
+                },
+                {
+                    "name": "AnatomicalSiteDescription",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The anatomical position of the body where the solid sample was taken from"
+                }
+            ]
+        },
+        "StorageUnit":{
+            "url": ".../@@api/v3/[action]",
+            "action": [
+                "create, get"
+            ],
+            "description": "Create storage unit(s) for eg. Room, Freezer, Shelf, etc while get is StorageUnit and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "A unique value can be assigned to portal_type and must be 'StorageUnit' ."
+                },
+                {
+                    "name": "department",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The department where the storage unit is located"
+                },
+                {
+                    "name": "temperature",
+                    "required": "false",
+                    "type": "string",
+                    "description": "The temperature of the storage unit."
+                },
+                {
+                    "name": "prefix",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Prefix of the IDs and Titles of the storage units. This will be appended with leading_zeros"
+                },
+                {
+                    "name": "leading_zeros",
+                    "required": "true",
+                    "type": "string",
+                    "description": "leading_zeros are used to construct the ids of the storage units. Eg. 00 for 2 zeros."
+                },
+                {
+                    "name": "seq_start",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Id start number"
+                },
+                {
+                    "name": "number_items",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of storage units to create."
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "parent folder path. Eg. storage/Room-001"
+                }
+            ]
+        },
+        "ManagedStorage":{
+            "url": ".../@@api/v3/[action]",
+            "action": [
+                "create, get"
+            ],
+            "description": "Create managed storage (Boxes) while get is ManagedStorage and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "A unique value can be assigned to portal_type and must be 'ManagedStorage' ."
+                },
+                {
+                    "name": "prefix",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Prefix of the IDs and Titles of the boxes. This will be appended with leading_zeros"
+                },
+                {
+                    "name": "leading_zeros",
+                    "required": "true",
+                    "type": "string",
+                    "description": "leading_zeros are used to construct the IDs of the boxes. Eg. 00 for 2 zeros."
+                },
+                {
+                    "name": "seq_start",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Id start number"
+                },
+                {
+                    "name": "number_items",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of boxes to create."
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "parent folder path. Eg. storage/Room-001"
+                },
+                {
+                    "name": "number_positions",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of positions in a box."
+                },
+                {
+                    "name": "x_axis",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of columns of the box 2D graphic representation."
+                },
+                {
+                    "name": "y_axis",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of rows of the box 2D graphic representation."
+                }
+            ]
+        },
+        "UnmanagedStorage":{
+            "url": ".../@@api/v3/[action]",
+            "action": [
+                "create, get"
+            ],
+            "description": "Create managed storage (Boxes) while get is UnmanagedStorage and uses no fields",
+            "fields": [
+                {
+                    "name": "portal_type",
+                    "required": "true",
+                    "type": "string",
+                    "description": "A unique value can be assigned to portal_type and must be 'UnmanagedStorage' ."
+                },
+                {
+                    "name": "prefix",
+                    "required": "true",
+                    "type": "string",
+                    "description": "Prefix of the IDs and Titles of the storage. This will be appended with leading_zeros"
+                },
+                {
+                    "name": "leading_zeros",
+                    "required": "true",
+                    "type": "string",
+                    "description": "leading_zeros are used to construct the IDs of the storage. Eg. 00 for 2 zeros."
+                },
+                {
+                    "name": "seq_start",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Id start number"
+                },
+                {
+                    "name": "number_items",
+                    "required": "true",
+                    "type": "int",
+                    "description": "Number of storage to create."
+                },
+                {
+                    "name": "parent_path",
+                    "required": "true",
+                    "type": "string",
+                    "description": "parent folder path. Eg. storage/Room-001"
+                }
+            ]
+        }
+    }
+}
